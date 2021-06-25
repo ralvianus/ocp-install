@@ -8,7 +8,14 @@ echo
 echo ====================================
 
 # Download requirements
-yum install unzip -y
+if [ -f /etc/redhat-release ]; then
+  yum install unzip -y
+fi
+
+if [ -f /etc/lsb-release ]; then
+  apt-get install unzip -y
+fi
+
 
 # Download Openshift Software
 echo Start downloading Openshift $ocp_version
@@ -54,4 +61,20 @@ echo Renaming the cert files
 for f in certs/lin/*.0; do
   mv -- "$f" "${f%.0}.crt";
 done
+echo Renaming the cert files completed
+echo ====================================
+
+#Copy the cert file into the system
+echo Installing CA Cert into the system
+if [ -f /etc/redhat-release ]; then
+  cp certs/lin/*.crt /etc/pki/ca-trust/source/anchors/
+  update-ca-trust
+fi
+
+if [ -f /etc/lsb-release ]; then
+  sudo mkdir /usr/share/ca-certificates/extra
+  sudo cp certs/lin/*.crt /usr/share/ca-certificates/extra
+  sudo dpkg-reconfigure ca-certificates
+fi
+echo Installing CA Cert completed
 echo ====================================
