@@ -1,7 +1,8 @@
 # LabOps Openshift Install
 
 ## Overview
-This script runs the flow of installing Openshift Cluster in vSphere environment as I wrote in [My blog post](https://alvianus.net/posts/2020/08/deploying-openshift-4.5-automatically-on-vsphere/). 
+This script runs the flow of installing Openshift Cluster in vSphere environment as I wrote in [My blog post](https://alvianus.net/posts/2020/08/deploying-openshift-4.5-automatically-on-vsphere/).
+
 
 ## Prepare the Pre-requisites
 Clone the repository
@@ -74,6 +75,12 @@ KcER1dnpPTWRmSmNFbXVWSDU3TWcwc29SRnkyLVZMMlhxQlJ2Rms1YjZnMGhEMW5XTjRVV2xTbHREV1p
 ## Openshift Install
 ```bash
 openshift-install create cluster
+```
+
+## Post Installation
+After installing the cluster, run this script to get the kubeconfig directory created
+```
+./ocp-install-post.sh
 ```
 
 ## Login to the cluster
