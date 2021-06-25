@@ -24,5 +24,6 @@ tar xvf openshift-client-linux.tar.gz
 echo
 
 mv oc kubectl openshift-install /usr/local/bin/
+rm *.tar.gz
 echo Extract complete
 echo ====================================
