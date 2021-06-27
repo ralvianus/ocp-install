@@ -38,4 +38,3 @@ platform:
 publish: External
 pullSecret: ''
 sshKey: |
-  
