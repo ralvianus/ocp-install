@@ -13,7 +13,7 @@ cd ocp-install
 
 Run the shell script
 ```bash
-./ocp-install.sh
+./ocp-install-prep.sh
 ```
 
 ## Edit `install-config.yaml`
@@ -70,6 +70,11 @@ Inserting pull secret from Redhat Portal
 pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K3JhbHZpYW51c3Ztd2FyZWNvbTF3anR
 <output omitted>
 KcER1dnpPTWRmSmNFbXVWSDU3TWcwc29SRnkyLVZMMlhxQlJ2Rms1YjZnMGhEMW5XTjRVV2xTbHREV1pOTXR5OEdIcTVZTURoTjA0MF9NZ2ZzcEpNeHh5a0Y5cWpFXzlTaw==","email":"ralvianus@vmware.com"}}}'
+```
+
+Inserting ssh public key
+```bash
+cat ~/.ssh/id_rsa.pub
 ```
 
 ## Openshift Install
