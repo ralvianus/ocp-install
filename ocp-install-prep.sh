@@ -19,8 +19,8 @@ fi
 
 # Download Openshift Software
 echo Start downloading Openshift $ocp_version
-wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-$ocp_version/openshift-client-linux.tar.gz
-wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-$ocp_version/openshift-install-linux.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/$ocp_version/openshift-client-linux.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/$ocp_version/openshift-install-linux.tar.gz
 echo Download complete
 echo ====================================
 echo
